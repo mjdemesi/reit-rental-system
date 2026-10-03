@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMA Filings — Meridian Horizon REIT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.7;
+        color: #1a1a1a;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        font-weight: 300;
+      }
+      .site-header {
+        background-color: #ffffff;
+        padding: 20px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eaeaea;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .site-header .logo {
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #0a2540;
+        text-decoration: none;
+      }
+      .site-header nav a {
+        color: #1a1a1a;
+        text-decoration: none;
+        margin-left: 40px;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+      }
+      .site-header nav a:hover {
+        color: #0a2540;
+      }
+      .contact-btn {
+        background-color: #0a2540;
+        color: #ffffff !important;
+        padding: 10px 24px;
+        border-radius: 2px;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .hero {
+        height: 55vh;
+        background:
+          linear-gradient(rgba(10, 37, 64, 0.65), rgba(10, 37, 64, 0.65)),
+          url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80")
+            center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #ffffff;
+      }
+      .hero h1 {
+        font-size: 52px;
+        font-weight: 300;
+        letter-spacing: 3px;
+        margin: 0;
+        text-transform: uppercase;
+      }
+      .hero p {
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin-top: 15px;
+        text-transform: uppercase;
+        opacity: 0.85;
+      }
+      .content-section {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 90px 40px;
+      }
+      .content-section h2 {
+        font-size: 34px;
+        font-weight: 300;
+        color: #0a2540;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 15px;
+      }
+      .content-section h3 {
+        font-size: 20px;
+        font-weight: 400;
+        color: #0a2540;
+        margin-top: 35px;
+        margin-bottom: 12px;
+      }
+      .content-section p {
+        font-size: 16px;
+        font-weight: 300;
+        color: #333;
+        margin-bottom: 18px;
+        text-align: justify;
+      }
+      .info-box {
+        background: #f8f8f8;
+        border-left: 3px solid #0a2540;
+        padding: 22px 28px;
+        margin: 30px 0;
+        font-size: 14px;
+      }
+      .info-box strong {
+        color: #0a2540;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 12px;
+        display: block;
+        margin-bottom: 8px;
+      }
+      table.filing-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        font-size: 14px;
+      }
+      table.filing-table th {
+        text-align: left;
+        padding: 16px 14px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #666;
+        font-weight: 500;
+        border-bottom: 2px solid #0a2540;
+        background-color: #fafafa;
+      }
+      table.filing-table td {
+        padding: 18px 14px;
+        border-bottom: 1px solid #eee;
+        color: #333;
+        font-weight: 300;
+      }
+      table.filing-table tr:hover td {
+        background-color: #fafafa;
+      }
+      .filing-type {
+        font-weight: 500;
+        color: #0a2540;
+      }
+      .filing-link {
+        color: #0a2540;
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid #0a2540;
+      }
+      .filing-link:hover {
+        color: #1a3a5c;
+      }
+      ul.clean-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+      }
+      ul.clean-list li {
+        padding: 12px 0 12px 25px;
+        position: relative;
+        border-bottom: 1px solid #eee;
+        font-size: 15px;
+      }
+      ul.clean-list li:before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: #0a2540;
+        font-weight: 500;
+      }
+      .site-footer {
+        background-color: #0a2540;
+        color: #ffffff;
+        padding: 70px 60px 35px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .footer-grid h4 {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+      .footer-grid p,
+      .footer-grid a {
+        color: #c8d0d8;
+        font-size: 14px;
+        font-weight: 300;
+        text-decoration: none;
+        line-height: 1.9;
+        display: block;
+      }
+      .footer-grid a:hover {
+        color: #ffffff;
+      }
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 50px auto 0;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        text-align: center;
+        font-size: 12px;
+        color: #8a95a0;
+        letter-spacing: 1px;
+      }
+      @media (max-width: 768px) {
+        .site-header {
+          padding: 20px;
+          flex-direction: column;
+        }
+        .hero h1 {
+          font-size: 34px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        table.filing-table {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="/" class="logo">MERIDIAN HORIZON</a>
+      <nav>
+        <a href="/">Investments</a>
+        <a href="/about/">About</a>
+        <a href="/corporate/investor-relations/">Investor Relations</a>
+        <a href="mailto:compliance@meridianhorizon.co.ke" class="contact-btn"
+          >Contact Compliance</a
+        >
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>CMA Filings</h1>
+        <p>Capital Markets Authority · Regulatory Compliance</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Regulatory Filings & Statutory Disclosures</h2>
+      <p>
+        Meridian Horizon REIT is registered with the Capital Markets Authority
+        (CMA) of Kenya under the Capital Markets (Real Estate Investment Trusts)
+        Regulations, 2013. In accordance with these regulations, the Trust is
+        required to submit periodic filings, disclosures, and compliance
+        certificates to the Authority. This page provides public access to our
+        regulatory filings for the benefit of unitholders, regulators, and other
+        stakeholders.
+      </p>
+      <p>
+        All filings are submitted within the timelines prescribed by the CMA
+        Regulations and are subject to review by the Authority's REIT
+        supervision unit. The Trust maintains an unqualified compliance record
+        since its listing in 2018.
+      </p>
+
+      <div class="info-box">
+        <strong>For Regulators & Compliance Officers</strong>
+        Official correspondence with the Capital Markets Authority is maintained
+        in the Trust's secure compliance vault and is available for inspection
+        upon formal request. Contact the Compliance Officer at
+        <a href="mailto:compliance@meridianhorizon.co.ke" style="color: #0a2540"
+          >compliance@meridianhorizon.co.ke</a
+        >
+      </div>
+
+      <h3>Recent CMA Filings (2026)</h3>
+      <table class="filing-table">
+        <thead>
+          <tr>
+            <th>Filing Reference</th>
+            <th>Filing Type</th>
+            <th>Date Submitted</th>
+            <th>Status</th>
+            <th>Document</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CMA/REIT/2026/Q3-01</td>
+            <td class="filing-type">Quarterly Financial Return (Q3 2026)</td>
+            <td>28 October 2026</td>
+            <td>Accepted</td>
+            <td><a href="#" class="filing-link">View PDF</a></td>
+          </tr>
+          <tr>
+            <td>CMA/REIT/2026/VAL-02</td>
+            <td class="filing-type">
+              Independent Valuation Report (June 2026)
+            </td>
+            <td>15 September 2026</td>
+            <td>Accepted</td>
+            <td><a href="#" class="filing-link">View PDF</a></td>
+          </tr>
+          <tr>
+            <td>CMA/REIT/2026/Q2-01</td>
+            <td class="filing-type">Quarterly Financial Return (Q2 2026)</td>
+            <td>29 July 2026</td>
+            <td>Accepted</td>
+            <td><a href="#" class="filing-link">View PDF</a></td>
+          </tr>
+          <tr>
+            <td>CMA/REIT/2026/ANN-01</td>
+            <td class="filing-type">
+              Annual Report & Audited Statements (FY 2025)
+            </td>
+            <td>28 March 2026</td>
+            <td>Accepted</td>
+            <td><a href="#" class="filing-link">View PDF</a></td>
+          </tr>
+          <tr>
+            <td>CMA/REIT/2026/COMP-01</td>
+            <td class="filing-type">Annual Compliance Certificate</td>
+            <td>31 January 2026</td>
+            <td>Accepted</td>
+            <td><a href="#" class="filing-link">View PDF</a></td>
+          </tr>
+          <tr>
+            <td>CMA/REIT/2025/VAL-02</td>
+            <td class="filing-type">
+              Independent Valuation Report (December 2025)
+            </td>
+            <td>20 February 2026</td>
+            <td>Accepted</td>
+            <td><a href="#" class="filing-link">View PDF</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Statutory Filing Obligations</h3>
+      <p>
+        Under the CMA REIT Regulations, the Trust is required to submit the
+        following filings on a periodic basis:
+      </p>
+      <ul class="clean-list">
+        <li>
+          <strong>Quarterly Financial Returns:</strong> Submitted within 30 days
+          of quarter-end, including statement of financial position,
+          comprehensive income, and cash flows.
+        </li>
+        <li>
+          <strong>Bi-Annual Independent Valuations:</strong> Conducted in June
+          and December by CMA-registered valuers, submitted within 60 days of
+          valuation date.
+        </li>
+        <li>
+          <strong>Annual Report & Audited Financial Statements:</strong>
+          Submitted within 90 days of financial year-end (31 December), audited
+          by approved audit firm.
+        </li>
+        <li>
+          <strong>Annual Compliance Certificate:</strong> Signed by the Trustees
+          and Manager, confirming adherence to all REIT Regulations, submitted
+          by 31 January each year.
+        </li>
+        <li>
+          <strong>Related Party Transaction Disclosures:</strong> Reported
+          within 7 days of transaction execution, with independent trustee
+          approval.
+        </li>
+        <li>
+          <strong>Material Event Notifications:</strong> Reported within 24
+          hours of occurrence, including changes in trustee, manager, or valuer.
+        </li>
+      </ul>
+
+      <h3>Key Regulatory Contacts</h3>
+      <ul class="clean-list">
+        <li>
+          <strong>Compliance Officer:</strong> Mr. James Kariuki, ACIS —
+          <a href="mailto:compliance@meridianhorizon.co.ke"
+            >compliance@meridianhorizon.co.ke</a
+          >
+        </li>
+        <li>
+          <strong>Trustees:</strong> Stanbic Bank Kenya Trustees Limited —
+          <a href="mailto:trustees@stanbic.co.ke">trustees@stanbic.co.ke</a>
+        </li>
+        <li>
+          <strong>Independent Auditors:</strong> PricewaterhouseCoopers Kenya —
+          <a href="mailto:nairobi@pwc.com">nairobi@pwc.com</a>
+        </li>
+        <li>
+          <strong>Independent Valuers:</strong> Knight Frank Kenya & HassConsult
+        </li>
+      </ul>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h4>Meridian Horizon REIT</h4>
+          <p>
+            Continued excellence in East African real estate investment and
+            institutional property management.
+          </p>
+          <p>
+            <a href="mailto:investors@meridianhorizon.co.ke"
+              >investors@meridianhorizon.co.ke</a
+            >
+          </p>
+          <p>
+            Delta Centre, 4th Floor<br />Muthangari Drive, Lavington<br />P.O.
+            Box 12345-00100<br />Nairobi, Kenya
+          </p>
+          <p><a href="tel:+254201234567">+254 20 123 4567</a></p>
+        </div>
+        <div>
+          <h4>Our Work</h4>
+          <a href="/">Active Asset Register</a>
+          <a href="/about/">Trust Overview</a>
+          <a href="/corporate/investor-relations/">Investor Relations</a>
+        </div>
+        <div>
+          <h4>Regulatory</h4>
+          <a href="/corporate/filings/cma/">CMA Filings</a>
+          <a href="/corporate/filings/nse/">NSE Disclosures</a>
+          <a href="/corporate/reports/annual/">Annual Reports</a>
+          <a href="/corporate/valuations/">Independent Valuations</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 MERIDIAN HORIZON REIT. ALL RIGHTS RESERVED. | LISTED ON THE
+        NAIROBI SECURITIES EXCHANGE | REGULATED BY THE CAPITAL MARKETS AUTHORITY
+      </div>
+    </footer>
+  </body>
+</html>

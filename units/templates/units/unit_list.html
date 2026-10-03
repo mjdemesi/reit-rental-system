@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investments — Meridian Horizon REIT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.7;
+        color: #1a1a1a;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        font-weight: 300;
+      }
+
+      /* ===== HEADER ===== */
+      .site-header {
+        background-color: #ffffff;
+        padding: 20px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eaeaea;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .site-header .logo {
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #0a2540;
+        text-decoration: none;
+      }
+      .site-header nav a {
+        color: #1a1a1a;
+        text-decoration: none;
+        margin-left: 40px;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+      }
+      .site-header nav a:hover {
+        color: #0a2540;
+      }
+      .site-header nav a.active {
+        font-weight: 500;
+        border-bottom: 2px solid #0a2540;
+        padding-bottom: 4px;
+      }
+      .contact-btn {
+        background-color: #0a2540;
+        color: #ffffff !important;
+        padding: 10px 24px;
+        border-radius: 2px;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        height: 60vh;
+        background:
+          linear-gradient(rgba(10, 37, 64, 0.6), rgba(10, 37, 64, 0.6)),
+          url("https://images.unsplash.com/photo-1460317442991-0ec209397118?w=1920&q=80")
+            center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #ffffff;
+      }
+      .hero h1 {
+        font-size: 56px;
+        font-weight: 300;
+        letter-spacing: 3px;
+        margin: 0;
+        text-transform: uppercase;
+      }
+      .hero p {
+        font-size: 16px;
+        letter-spacing: 2px;
+        margin-top: 15px;
+        text-transform: uppercase;
+        opacity: 0.85;
+      }
+
+      /* ===== CONTENT ===== */
+      .content-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 100px 40px;
+      }
+      .content-section.narrow {
+        max-width: 900px;
+      }
+      .content-section h2 {
+        font-size: 36px;
+        font-weight: 300;
+        color: #0a2540;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+      }
+      .content-section h3 {
+        font-size: 22px;
+        font-weight: 400;
+        color: #0a2540;
+        margin-top: 40px;
+        margin-bottom: 15px;
+      }
+      .content-section p {
+        font-size: 16px;
+        font-weight: 300;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+
+      /* ===== SUMMARY METRICS ===== */
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 30px;
+        margin: 50px 0;
+      }
+      .summary-box {
+        text-align: center;
+        padding: 30px 15px;
+        border-top: 2px solid #0a2540;
+      }
+      .summary-box h3 {
+        font-size: 36px;
+        font-weight: 300;
+        color: #0a2540;
+        margin: 0 0 10px 0;
+        letter-spacing: 1px;
+      }
+      .summary-box p {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #666;
+        font-weight: 500;
+        margin: 0;
+        text-align: center;
+      }
+
+      /* ===== DATA TABLE ===== */
+      .asset-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 40px 0;
+        font-size: 14px;
+      }
+      .asset-table th {
+        text-align: left;
+        padding: 18px 15px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #666;
+        font-weight: 500;
+        border-bottom: 2px solid #0a2540;
+        background-color: #fafafa;
+      }
+      .asset-table td {
+        padding: 20px 15px;
+        border-bottom: 1px solid #eee;
+        color: #333;
+        font-weight: 300;
+      }
+      .asset-table tr:hover td {
+        background-color: #fafafa;
+      }
+      .asset-table .asset-id {
+        font-weight: 500;
+        color: #0a2540;
+        letter-spacing: 0.5px;
+      }
+      .asset-table .location {
+        font-size: 12px;
+        color: #888;
+        display: block;
+        margin-top: 3px;
+      }
+
+      /* Status indicators */
+      .status {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 500;
+        padding: 5px 12px;
+        border-radius: 2px;
+        display: inline-block;
+      }
+      .status-leased {
+        background-color: #e8f5e9;
+        color: #2e7d32;
+      }
+      .status-vacant {
+        background-color: #ffebee;
+        color: #c62828;
+      }
+      .status-turnover {
+        background-color: #fff8e1;
+        color: #f57c00;
+      }
+
+      /* ===== INFO BOX ===== */
+      .info-box {
+        background: #f8f8f8;
+        border-left: 3px solid #0a2540;
+        padding: 25px 30px;
+        margin: 40px 0;
+        font-size: 14px;
+      }
+      .info-box strong {
+        color: #0a2540;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 12px;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      /* ===== LISTS ===== */
+      ul.clean-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+      }
+      ul.clean-list li {
+        padding: 12px 0 12px 25px;
+        position: relative;
+        border-bottom: 1px solid #eee;
+        font-size: 15px;
+      }
+      ul.clean-list li:before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: #0a2540;
+        font-weight: 500;
+      }
+
+      /* ===== FOOTER ===== */
+      .site-footer {
+        background-color: #0a2540;
+        color: #ffffff;
+        padding: 80px 60px 40px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .footer-grid h4 {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+      .footer-grid p,
+      .footer-grid a {
+        color: #c8d0d8;
+        font-size: 14px;
+        font-weight: 300;
+        text-decoration: none;
+        line-height: 1.9;
+        display: block;
+      }
+      .footer-grid a:hover {
+        color: #ffffff;
+      }
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 60px auto 0;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        text-align: center;
+        font-size: 12px;
+        color: #8a95a0;
+        letter-spacing: 1px;
+      }
+
+      @media (max-width: 768px) {
+        .site-header {
+          padding: 20px;
+          flex-direction: column;
+          gap: 15px;
+        }
+        .site-header nav a {
+          margin: 0 12px;
+        }
+        .hero h1 {
+          font-size: 36px;
+        }
+        .summary-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .asset-table {
+          font-size: 12px;
+        }
+        .asset-table th,
+        .asset-table td {
+          padding: 12px 8px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <a href="/" class="logo">MERIDIAN HORIZON</a>
+      <nav>
+        <a href="/" class="active">Investments</a>
+        <a href="/about/">About</a>
+        <a href="mailto:investors@meridianhorizon.co.ke" class="contact-btn"
+          >Investor Relations</a
+        >
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>Investments</h1>
+        <p>Active Asset Register — Q3 2026</p>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SUMMARY -->
+    <section class="content-section">
+      <h2>Portfolio Performance Summary</h2>
+      <p>
+        This register provides a comprehensive view of the Trust's active asset
+        portfolio, including occupancy status, rental performance, and net
+        operating income (NOI) metrics. All figures are reported in Kenya
+        Shillings (KES) and represent the trailing twelve months (T12) ending 30
+        September 2026.
+      </p>
+
+      <div class="summary-grid">
+        <div class="summary-box">
+          <h3>142</h3>
+          <p>Total Units</p>
+        </div>
+        <div class="summary-box">
+          <h3>137</h3>
+          <p>Occupied Units</p>
+        </div>
+        <div class="summary-box">
+          <h3>96.8%</h3>
+          <p>Occupancy Rate</p>
+        </div>
+        <div class="summary-box">
+          <h3>3.82B</h3>
+          <p>Annualised Rent (KES)</p>
+        </div>
+        <div class="summary-box">
+          <h3>2.94B</h3>
+          <p>T12 NOI (KES)</p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <strong>Note to Investors & Analysts</strong>
+        This register represents a representative sample of the Trust's
+        portfolio for illustrative purposes. The complete asset register
+        comprising all 142 properties is available in our quarterly investor
+        presentation and annual report. Properties are valued bi-annually by
+        independent valuers Knight Frank Kenya and HassConsult in accordance
+        with International Valuation Standards (IVS).
+      </div>
+    </section>
+
+    <!-- ASSET REGISTER TABLE -->
+    <section class="content-section">
+      <h2>Selected Properties</h2>
+      <p>
+        The following table presents a representative sample of the Trust's
+        portfolio across different asset classes and geographic locations. Each
+        property is assigned a unique asset identifier for tracking and
+        reporting purposes.
+      </p>
+
+      <table class="asset-table">
+        <thead>
+          <tr>
+            <th>Asset ID</th>
+            <th>Property Class & Location</th>
+            <th>Gross Area (Sq. Ft.)</th>
+            <th>Status</th>
+            <th>Annualised Rent</th>
+            <th>T12 NOI</th>
+            <th>NOI Margin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="asset-id">MHD-A-101</td>
+            <td>
+              Class A Multi-Family<span class="location"
+                >Westlands, Nairobi</span
+              >
+            </td>
+            <td>1,150</td>
+            <td><span class="status status-leased">Leased</span></td>
+            <td>KES 1,440,000</td>
+            <td>KES 960,000</td>
+            <td>66.7%</td>
+          </tr>
+          <tr>
+            <td class="asset-id">MHD-A-102</td>
+            <td>
+              Class A Multi-Family<span class="location"
+                >Westlands, Nairobi</span
+              >
+            </td>
+            <td>1,150</td>
+            <td><span class="status status-leased">Leased</span></td>
+            <td>KES 1,440,000</td>
+            <td>KES 955,000</td>
+            <td>66.3%</td>
+          </tr>
+          <tr>
+            <td class="asset-id">MHD-C-205</td>
+            <td>
+              Class A Retail<span class="location">Upper Hill, Nairobi</span>
+            </td>
+            <td>3,400</td>
+            <td><span class="status status-leased">Leased (NNN)</span></td>
+            <td>KES 4,200,000</td>
+            <td>KES 3,780,000</td>
+            <td>90.0%</td>
+          </tr>
+          <tr>
+            <td class="asset-id">MHD-C-206</td>
+            <td>
+              Class A Retail<span class="location">Upper Hill, Nairobi</span>
+            </td>
+            <td>2,800</td>
+            <td><span class="status status-leased">Leased (NNN)</span></td>
+            <td>KES 3,360,000</td>
+            <td>KES 3,024,000</td>
+            <td>90.0%</td>
+          </tr>
+          <tr>
+            <td class="asset-id">MHD-O-301</td>
+            <td>
+              Grade A Office<span class="location">Westlands, Nairobi</span>
+            </td>
+            <td>4,500</td>
+            <td><span class="status status-leased">Leased</span></td>
+            <td>KES 5,400,000</td>
+            <td>KES 3,780,000</td>
+            <td>70.0%</td>
+          </tr>
+          <tr>
+            <td class="asset-id">MHD-O-302</td>
+            <td>
+              Grade A Office<span class="location">Upper Hill, Nairobi</span>
+            </td>
+            <td>5,200</td>
+            <td><span class="status status-leased">Leased</span></td>
+            <td>KES 6,240,000</td>
+            <td>KES 4,368,000</td>
+            <td>70.0%</td>
+          </tr>
+          <tr>
+            <td class="asset-id">MHD-A-310</td>
+            <td>
+              Class A Multi-Family<span class="location"
+                >Kilimani, Nairobi</span
+              >
+            </td>
+            <td>1,800</td>
+            <td><span class="status status-turnover">Unit Turnover</span></td>
+            <td>KES 0</td>
+            <td>-KES 145,000</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td class="asset-id">MHD-I-012</td>
+            <td>
+              Flex Industrial<span class="location"
+                >Mombasa Road Logistics Park</span
+              >
+            </td>
+            <td>8,500</td>
+            <td><span class="status status-leased">Leased</span></td>
+            <td>KES 2,550,000</td>
+            <td>KES 2,040,000</td>
+            <td>80.0%</td>
+          </tr>
+          <tr>
+            <td class="asset-id">MHD-I-013</td>
+            <td>
+              Flex Industrial<span class="location"
+                >Mombasa Road Logistics Park</span
+              >
+            </td>
+            <td>5,000</td>
+            <td><span class="status status-vacant">Vacant</span></td>
+            <td>KES 0</td>
+            <td>KES 0</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td class="asset-id">MHD-R-045</td>
+            <td>
+              Neighbourhood Retail<span class="location">Ruaka, Nairobi</span>
+            </td>
+            <td>2,200</td>
+            <td><span class="status status-leased">Leased</span></td>
+            <td>KES 1,320,000</td>
+            <td>KES 924,000</td>
+            <td>70.0%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ASSET CLASS ANALYSIS -->
+    <section class="content-section narrow">
+      <h2>Asset Class Performance</h2>
+      <p>
+        The Trust's portfolio is strategically diversified across four primary
+        asset classes, each contributing to overall portfolio stability and
+        growth.
+      </p>
+
+      <h3>Multi-Family Residential (52% of Portfolio)</h3>
+      <ul class="clean-list">
+        <li>
+          <strong>Occupancy Rate:</strong> 97.2% (above portfolio average)
+        </li>
+        <li><strong>Average Rental Growth:</strong> 8.5% YoY</li>
+        <li>
+          <strong>Tenant Profile:</strong> Mid-to-senior level professionals,
+          expatriates, and small families
+        </li>
+        <li>
+          <strong>Key Strengths:</strong> Strong demand fundamentals in
+          Nairobi's prime residential nodes, limited new supply in established
+          neighbourhoods, and high tenant retention rates (average lease term:
+          18 months)
+        </li>
+      </ul>
+
+      <h3>Commercial Office (28% of Portfolio)</h3>
+      <ul class="clean-list">
+        <li><strong>Occupancy Rate:</strong> 95.8%</li>
+        <li><strong>Average Rental Growth:</strong> 6.2% YoY</li>
+        <li>
+          <strong>Tenant Profile:</strong> Multinational corporations, financial
+          institutions, professional services firms, and technology companies
+        </li>
+        <li>
+          <strong>Key Strengths:</strong> Grade A specifications, prime
+          locations with excellent connectivity, and long lease terms (average:
+          5 years) providing income visibility
+        </li>
+      </ul>
+
+      <h3>Retail (12% of Portfolio)</h3>
+      <ul class="clean-list">
+        <li><strong>Occupancy Rate:</strong> 98.1%</li>
+        <li><strong>Average Rental Growth:</strong> 7.8% YoY</li>
+        <li>
+          <strong>Tenant Profile:</strong> Supermarket anchors, specialty
+          retailers, food & beverage operators
+        </li>
+        <li>
+          <strong>Key Strengths:</strong> Neighbourhood convenience positioning,
+          strong anchor tenants. Majority of leases are triple-net (NNN)
+          structure
+        </li>
+      </ul>
+
+      <h3>Industrial & Logistics (8% of Portfolio)</h3>
+      <ul class="clean-list">
+        <li><strong>Occupancy Rate:</strong> 91.5%</li>
+        <li>
+          <strong>Average Rental Growth:</strong> 9.4% YoY (fastest growing
+          segment)
+        </li>
+        <li>
+          <strong>Tenant Profile:</strong> Third-party logistics providers,
+          e-commerce fulfilment operators, light manufacturing
+        </li>
+        <li>
+          <strong>Key Strengths:</strong> Benefiting from e-commerce growth and
+          infrastructure development. Strategic locations along major transport
+          corridors
+        </li>
+      </ul>
+    </section>
+
+    <!-- GEOGRAPHIC DISTRIBUTION -->
+    <section class="content-section narrow">
+      <h2>Geographic Distribution</h2>
+      <p>
+        The Trust's portfolio is concentrated in Kenya's most dynamic urban
+        markets, with strategic exposure to both primary and secondary growth
+        centres.
+      </p>
+
+      <h3>Nairobi Metropolitan (78% of Portfolio)</h3>
+      <ul class="clean-list">
+        <li>
+          <strong>Westlands (32%):</strong> Nairobi's premier commercial and
+          residential node, home to multinational headquarters and upscale
+          retail.
+        </li>
+        <li>
+          <strong>Upper Hill (24%):</strong> Emerging as Nairobi's new CBD, with
+          significant Grade A office development.
+        </li>
+        <li>
+          <strong>Kilimani & Lavington (14%):</strong> Established high-end
+          residential neighbourhoods with strong expatriate demand.
+        </li>
+        <li>
+          <strong>Ruaka & Gigiri (8%):</strong> Rapidly developing residential
+          and retail markets benefiting from proximity to UN Complex.
+        </li>
+      </ul>
+
+      <h3>Coastal Region — Mombasa (12%)</h3>
+      <p>
+        Kenya's second-largest city and home to East Africa's largest port. The
+        Trust's coastal portfolio focuses on logistics properties serving the
+        port corridor and commercial properties benefiting from tourism-driven
+        demand.
+      </p>
+
+      <h3>Western Region — Kisumu (6%)</h3>
+      <p>
+        Emerging commercial centre serving the Lake Victoria region. Benefiting
+        from infrastructure investment under Vision 2030 and growing
+        cross-border trade.
+      </p>
+
+      <h3>Rift Valley — Nakuru & Eldoret (4%)</h3>
+      <p>
+        Agricultural hinterland commercial centres experiencing
+        urbanisation-driven demand for modern retail and residential space.
+      </p>
+    </section>
+
+    <!-- COMPLIANCE -->
+    <section class="content-section narrow">
+      <h2>Compliance & Reporting Standards</h2>
+      <p>
+        The Trust maintains the highest standards of transparency and compliance
+        with all regulatory requirements.
+      </p>
+
+      <h3>Independent Valuations</h3>
+      <ul class="clean-list">
+        <li>
+          All properties are valued bi-annually (June and December) by
+          independent, CMA-registered valuers
+        </li>
+        <li>Current valuers: Knight Frank Kenya and HassConsult</li>
+        <li>
+          Valuations conducted in accordance with International Valuation
+          Standards (IVS)
+        </li>
+      </ul>
+
+      <h3>Financial Reporting</h3>
+      <ul class="clean-list">
+        <li>
+          Quarterly financial statements reviewed by independent auditors
+          (PricewaterhouseCoopers Kenya)
+        </li>
+        <li>
+          Annual financial statements audited and published within 90 days of
+          year-end
+        </li>
+        <li>
+          Compliance with International Financial Reporting Standards (IFRS)
+        </li>
+        <li>Unqualified audit opinion maintained since inception</li>
+      </ul>
+
+      <div class="info-box">
+        <strong>For Regulators & Compliance Officers</strong>
+        Detailed compliance documentation, including property title deeds, lease
+        agreements, valuation reports, and regulatory correspondence, is
+        maintained in the Trust's compliance vault and available for inspection
+        upon request. Contact: compliance@meridianhorizon.co.ke
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h4>Meridian Horizon REIT</h4>
+          <p>
+            Continued excellence in East African real estate investment and
+            institutional property management.
+          </p>
+          <p>
+            <a href="mailto:investors@meridianhorizon.co.ke"
+              >investors@meridianhorizon.co.ke</a
+            >
+          </p>
+          <p>
+            Delta Centre, 4th Floor<br />
+            Muthangari Drive, Lavington<br />
+            P.O. Box 12345-00100<br />
+            Nairobi, Kenya
+          </p>
+          <p><a href="tel:+254201234567">+254 20 123 4567</a></p>
+        </div>
+        <div>
+          <h4>Our Work</h4>
+          <a href="/">Active Asset Register</a>
+          <a href="/about/">Trust Overview</a>
+          <a href="/corporate/investor-relations/">Investor Relations</a>
+        </div>
+        <div>
+          <div>
+            <h4>Regulatory</h4>
+            <a href="/corporate/filings/cma/">CMA Filings</a>
+            <a href="/corporate/filings/nse/">NSE Disclosures</a>
+            <a href="/corporate/reports/annual/">Annual Reports</a>
+            <a href="/corporate/valuations/">Independent Valuations</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 MERIDIAN HORIZON REIT. ALL RIGHTS RESERVED. &nbsp;|&nbsp; LISTED
+        ON THE NAIROBI SECURITIES EXCHANGE &nbsp;|&nbsp; REGULATED BY THE
+        CAPITAL MARKETS AUTHORITY
+      </div>
+    </footer>
+  </body>
+</html>

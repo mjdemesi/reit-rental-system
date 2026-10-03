@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Independent Valuations — Meridian Horizon REIT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.7;
+        color: #1a1a1a;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        font-weight: 300;
+      }
+      .site-header {
+        background-color: #ffffff;
+        padding: 20px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eaeaea;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .site-header .logo {
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #0a2540;
+        text-decoration: none;
+      }
+      .site-header nav a {
+        color: #1a1a1a;
+        text-decoration: none;
+        margin-left: 40px;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+      }
+      .site-header nav a:hover {
+        color: #0a2540;
+      }
+      .contact-btn {
+        background-color: #0a2540;
+        color: #ffffff !important;
+        padding: 10px 24px;
+        border-radius: 2px;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .hero {
+        height: 55vh;
+        background:
+          linear-gradient(rgba(10, 37, 64, 0.65), rgba(10, 37, 64, 0.65)),
+          url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80")
+            center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #ffffff;
+      }
+      .hero h1 {
+        font-size: 52px;
+        font-weight: 300;
+        letter-spacing: 3px;
+        margin: 0;
+        text-transform: uppercase;
+      }
+      .hero p {
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin-top: 15px;
+        text-transform: uppercase;
+        opacity: 0.85;
+      }
+      .content-section {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 90px 40px;
+      }
+      .content-section h2 {
+        font-size: 34px;
+        font-weight: 300;
+        color: #0a2540;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 15px;
+      }
+      .content-section h3 {
+        font-size: 20px;
+        font-weight: 400;
+        color: #0a2540;
+        margin-top: 35px;
+        margin-bottom: 12px;
+      }
+      .content-section p {
+        font-size: 16px;
+        font-weight: 300;
+        color: #333;
+        margin-bottom: 18px;
+        text-align: justify;
+      }
+      .info-box {
+        background: #f8f8f8;
+        border-left: 3px solid #0a2540;
+        padding: 22px 28px;
+        margin: 30px 0;
+        font-size: 14px;
+      }
+      .info-box strong {
+        color: #0a2540;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 12px;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .valuation-metrics {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        margin: 40px 0;
+      }
+      .metric-box {
+        text-align: center;
+        padding: 30px 20px;
+        border-top: 2px solid #0a2540;
+      }
+      .metric-box h3 {
+        font-size: 38px;
+        font-weight: 300;
+        color: #0a2540;
+        margin: 0 0 10px 0;
+        letter-spacing: 1px;
+      }
+      .metric-box p {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #666;
+        font-weight: 500;
+        margin: 0;
+        text-align: center;
+      }
+      table.valuation-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        font-size: 14px;
+      }
+      table.valuation-table th {
+        text-align: left;
+        padding: 16px 14px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #666;
+        font-weight: 500;
+        border-bottom: 2px solid #0a2540;
+        background-color: #fafafa;
+      }
+      table.valuation-table td {
+        padding: 18px 14px;
+        border-bottom: 1px solid #eee;
+        color: #333;
+        font-weight: 300;
+      }
+      table.valuation-table tr:hover td {
+        background-color: #fafafa;
+      }
+      .positive {
+        color: #2f855a;
+        font-weight: 500;
+      }
+      .negative {
+        color: #c53030;
+        font-weight: 500;
+      }
+      ul.clean-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+      }
+      ul.clean-list li {
+        padding: 12px 0 12px 25px;
+        position: relative;
+        border-bottom: 1px solid #eee;
+        font-size: 15px;
+      }
+      ul.clean-list li:before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: #0a2540;
+        font-weight: 500;
+      }
+      .site-footer {
+        background-color: #0a2540;
+        color: #ffffff;
+        padding: 70px 60px 35px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .footer-grid h4 {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+      .footer-grid p,
+      .footer-grid a {
+        color: #c8d0d8;
+        font-size: 14px;
+        font-weight: 300;
+        text-decoration: none;
+        line-height: 1.9;
+        display: block;
+      }
+      .footer-grid a:hover {
+        color: #ffffff;
+      }
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 50px auto 0;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        text-align: center;
+        font-size: 12px;
+        color: #8a95a0;
+        letter-spacing: 1px;
+      }
+      @media (max-width: 768px) {
+        .site-header {
+          padding: 20px;
+          flex-direction: column;
+        }
+        .hero h1 {
+          font-size: 34px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .valuation-metrics {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="/" class="logo">MERIDIAN HORIZON</a>
+      <nav>
+        <a href="/">Investments</a>
+        <a href="/about/">About</a>
+        <a href="/corporate/investor-relations/">Investor Relations</a>
+        <a href="mailto:ir@meridianhorizon.co.ke" class="contact-btn"
+          >Contact IR</a
+        >
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Independent Valuations</h1>
+        <p>External Valuers · International Valuation Standards</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Independent Property Valuations</h2>
+      <p>
+        In accordance with the Capital Markets (Real Estate Investment Trusts)
+        Regulations, 2013, Meridian Horizon REIT commissions bi-annual
+        independent valuations of its entire property portfolio from
+        CMA-registered valuers. These valuations form the basis of the Trust's
+        Net Asset Value (NAV) reporting and are a critical component of our
+        commitment to transparency and unitholder protection.
+      </p>
+      <p>
+        The Trust engages two leading independent valuation firms —
+        <strong>Knight Frank Kenya</strong> and <strong>HassConsult</strong> —
+        to ensure robust cross-validation and minimise concentration risk in the
+        valuation process. Both firms are registered with the Valuation
+        Registration Board of Kenya and conduct valuations in accordance with
+        the International Valuation Standards (IVS).
+      </p>
+
+      <div class="valuation-metrics">
+        <div class="metric-box">
+          <h3>KES 45.2B</h3>
+          <p>Total Portfolio Value</p>
+        </div>
+        <div class="metric-box">
+          <h3>+8.7%</h3>
+          <p>YoY Valuation Growth</p>
+        </div>
+        <div class="metric-box">
+          <h3>142</h3>
+          <p>Properties Valued</p>
+        </div>
+        <div class="metric-box">
+          <h3>2</h3>
+          <p>Independent Valuers</p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <strong>Valuation Methodology</strong>
+        Properties are valued using the Income Capitalisation method for
+        income-producing assets, the Direct Comparison method for residential
+        and retail units, and the Depreciated Replacement Cost method for
+        specialised industrial assets. Capitalisation rates are derived from
+        observable market transactions and adjusted for asset-specific risk
+        factors.
+      </div>
+
+      <h3>Latest Valuation Summary — June 2026</h3>
+      <table class="valuation-table">
+        <thead>
+          <tr>
+            <th>Asset Class</th>
+            <th>No. of Properties</th>
+            <th>June 2026 Valuation</th>
+            <th>December 2025 Valuation</th>
+            <th>Movement</th>
+            <th>Valuer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Multi-Family Residential</td>
+            <td>74</td>
+            <td>KES 23.5B</td>
+            <td>KES 21.8B</td>
+            <td class="positive">+7.8%</td>
+            <td>Knight Frank Kenya</td>
+          </tr>
+          <tr>
+            <td>Commercial Office</td>
+            <td>40</td>
+            <td>KES 12.7B</td>
+            <td>KES 11.9B</td>
+            <td class="positive">+6.7%</td>
+            <td>HassConsult</td>
+          </tr>
+          <tr>
+            <td>Retail</td>
+            <td>17</td>
+            <td>KES 5.4B</td>
+            <td>KES 5.1B</td>
+            <td class="positive">+5.9%</td>
+            <td>Knight Frank Kenya</td>
+          </tr>
+          <tr>
+            <td>Industrial & Logistics</td>
+            <td>11</td>
+            <td>KES 3.6B</td>
+            <td>KES 3.0B</td>
+            <td class="positive">+20.0%</td>
+            <td>HassConsult</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Valuation History</h3>
+      <table class="valuation-table">
+        <thead>
+          <tr>
+            <th>Valuation Date</th>
+            <th>Total Portfolio Value</th>
+            <th>NAV Per Unit</th>
+            <th>YoY Movement</th>
+            <th>Report</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>June 2026</td>
+            <td>KES 45.2B</td>
+            <td>KES 22.60</td>
+            <td class="positive">+4.2%</td>
+            <td>
+              <a
+                href="#"
+                style="color: #0a2540; border-bottom: 1px solid #0a2540"
+                >View Summary</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>December 2025</td>
+            <td>KES 43.4B</td>
+            <td>KES 21.70</td>
+            <td class="positive">+8.7%</td>
+            <td>
+              <a
+                href="#"
+                style="color: #0a2540; border-bottom: 1px solid #0a2540"
+                >View Summary</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>June 2025</td>
+            <td>KES 41.8B</td>
+            <td>KES 20.90</td>
+            <td class="positive">+6.1%</td>
+            <td>
+              <a
+                href="#"
+                style="color: #0a2540; border-bottom: 1px solid #0a2540"
+                >View Summary</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>December 2024</td>
+            <td>KES 39.9B</td>
+            <td>KES 19.95</td>
+            <td class="positive">+7.3%</td>
+            <td>
+              <a
+                href="#"
+                style="color: #0a2540; border-bottom: 1px solid #0a2540"
+                >View Summary</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>June 2024</td>
+            <td>KES 38.2B</td>
+            <td>KES 19.10</td>
+            <td class="positive">+5.8%</td>
+            <td>
+              <a
+                href="#"
+                style="color: #0a2540; border-bottom: 1px solid #0a2540"
+                >View Summary</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>December 2023</td>
+            <td>KES 36.5B</td>
+            <td>KES 18.25</td>
+            <td class="positive">+4.9%</td>
+            <td>
+              <a
+                href="#"
+                style="color: #0a2540; border-bottom: 1px solid #0a2540"
+                >View Summary</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Valuation Governance</h3>
+      <p>
+        The Trust's valuation process is subject to rigorous governance
+        oversight to ensure independence, accuracy, and compliance with
+        regulatory requirements:
+      </p>
+      <ul class="clean-list">
+        <li>
+          <strong>Valuer Independence:</strong> Both Knight Frank Kenya and
+          HassConsult are independent of the Trust, the Manager, and the
+          Trustees. Neither firm has any material business relationship with the
+          Trust beyond the valuation engagement.
+        </li>
+        <li>
+          <strong>Rotation Policy:</strong> The lead valuation partner at each
+          firm is rotated every five years in accordance with best practice
+          governance standards.
+        </li>
+        <li>
+          <strong>Audit & Valuation Committee:</strong> The Board's Audit &
+          Valuation Committee reviews all valuation reports, meets directly with
+          the valuers, and challenges key assumptions including capitalisation
+          rates, vacancy assumptions, and growth forecasts.
+        </li>
+        <li>
+          <strong>CMA Oversight:</strong> Valuation reports are submitted to the
+          Capital Markets Authority within 60 days of the valuation date and
+          form the basis of the Trust's NAV reporting.
+        </li>
+        <li>
+          <strong>IVS Compliance:</strong> All valuations are conducted in
+          accordance with the International Valuation Standards (IVS) published
+          by the International Valuation Standards Council (IVSC).
+        </li>
+      </ul>
+
+      <h3>Valuer Profiles</h3>
+      <ul class="clean-list">
+        <li>
+          <strong>Knight Frank Kenya:</strong> A leading global real estate
+          consultancy with over 25 years of operations in Kenya. Registered with
+          the Valuation Registration Board of Kenya and member of the Royal
+          Institution of Chartered Surveyors (RICS).
+        </li>
+        <li>
+          <strong>HassConsult:</strong> A premier Kenyan property consultancy
+          founded in 1992, widely recognised for its authoritative HassConsult
+          Property Index and deep expertise in the Nairobi real estate market.
+          Registered valuers with the Valuation Registration Board of Kenya.
+        </li>
+      </ul>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h4>Meridian Horizon REIT</h4>
+          <p>
+            Continued excellence in East African real estate investment and
+            institutional property management.
+          </p>
+          <p>
+            <a href="mailto:investors@meridianhorizon.co.ke"
+              >investors@meridianhorizon.co.ke</a
+            >
+          </p>
+          <p>
+            Delta Centre, 4th Floor<br />Muthangari Drive, Lavington<br />P.O.
+            Box 12345-00100<br />Nairobi, Kenya
+          </p>
+          <p><a href="tel:+254201234567">+254 20 123 4567</a></p>
+        </div>
+        <div>
+          <h4>Our Work</h4>
+          <a href="/">Active Asset Register</a>
+          <a href="/about/">Trust Overview</a>
+          <a href="/corporate/investor-relations/">Investor Relations</a>
+        </div>
+        <div>
+          <h4>Regulatory</h4>
+          <a href="/corporate/filings/cma/">CMA Filings</a>
+          <a href="/corporate/filings/nse/">NSE Disclosures</a>
+          <a href="/corporate/reports/annual/">Annual Reports</a>
+          <a href="/corporate/valuations/">Independent Valuations</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 MERIDIAN HORIZON REIT. ALL RIGHTS RESERVED. | LISTED ON THE
+        NAIROBI SECURITIES EXCHANGE | REGULATED BY THE CAPITAL MARKETS AUTHORITY
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Meridian Horizon REIT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.7;
+        color: #1a1a1a;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        font-weight: 300;
+      }
+
+      /* ===== HEADER / NAVIGATION ===== */
+      .site-header {
+        background-color: #ffffff;
+        padding: 20px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eaeaea;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .site-header .logo {
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #0a2540;
+        text-decoration: none;
+      }
+      .site-header nav a {
+        color: #1a1a1a;
+        text-decoration: none;
+        margin-left: 40px;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+      }
+      .site-header nav a:hover {
+        color: #0a2540;
+      }
+      .site-header nav a.active {
+        font-weight: 500;
+        border-bottom: 2px solid #0a2540;
+        padding-bottom: 4px;
+      }
+      .contact-btn {
+        background-color: #0a2540;
+        color: #ffffff !important;
+        padding: 10px 24px;
+        border-radius: 2px;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .contact-btn:hover {
+        background-color: #1a3a5c;
+      }
+
+      /* ===== HERO SECTION ===== */
+      .hero {
+        height: 75vh;
+        background:
+          linear-gradient(rgba(10, 37, 64, 0.55), rgba(10, 37, 64, 0.55)),
+          url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80")
+            center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #ffffff;
+      }
+      .hero h1 {
+        font-size: 56px;
+        font-weight: 300;
+        letter-spacing: 3px;
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      /* ===== CONTENT SECTIONS ===== */
+      .content-section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 100px 40px;
+      }
+      .content-section.wide {
+        max-width: 1200px;
+      }
+      .content-section p {
+        font-size: 16px;
+        font-weight: 300;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+      .content-section h2 {
+        font-size: 36px;
+        font-weight: 300;
+        color: #0a2540;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+      }
+      .content-section h3 {
+        font-size: 22px;
+        font-weight: 400;
+        color: #0a2540;
+        margin-top: 40px;
+        margin-bottom: 15px;
+      }
+
+      /* ===== PHILOSOPHY QUOTE ===== */
+      .philosophy {
+        background-color: #f8f8f8;
+        padding: 100px 40px;
+        text-align: center;
+      }
+      .philosophy blockquote {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 26px;
+        font-weight: 300;
+        font-style: italic;
+        color: #0a2540;
+        line-height: 1.5;
+        letter-spacing: 0.5px;
+      }
+
+      /* ===== METRICS GRID ===== */
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        margin: 60px 0;
+      }
+      .metric-box {
+        text-align: center;
+        padding: 30px 20px;
+        border-top: 2px solid #0a2540;
+      }
+      .metric-box h3 {
+        font-size: 42px;
+        font-weight: 300;
+        color: #0a2540;
+        margin: 0 0 10px 0;
+        letter-spacing: 1px;
+      }
+      .metric-box p {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #666;
+        font-weight: 500;
+        margin: 0;
+        text-align: center;
+      }
+
+      /* ===== LISTS ===== */
+      ul.clean-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+      }
+      ul.clean-list li {
+        padding: 12px 0 12px 25px;
+        position: relative;
+        border-bottom: 1px solid #eee;
+        font-size: 15px;
+      }
+      ul.clean-list li:before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: #0a2540;
+        font-weight: 500;
+      }
+
+      /* ===== INFO BOX ===== */
+      .info-box {
+        background: #f8f8f8;
+        border-left: 3px solid #0a2540;
+        padding: 25px 30px;
+        margin: 40px 0;
+        font-size: 14px;
+      }
+      .info-box strong {
+        color: #0a2540;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 12px;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      /* ===== FOOTER ===== */
+      .site-footer {
+        background-color: #0a2540;
+        color: #ffffff;
+        padding: 80px 60px 40px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .footer-grid h4 {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+      .footer-grid p,
+      .footer-grid a {
+        color: #c8d0d8;
+        font-size: 14px;
+        font-weight: 300;
+        text-decoration: none;
+        line-height: 1.9;
+        display: block;
+      }
+      .footer-grid a:hover {
+        color: #ffffff;
+      }
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 60px auto 0;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        text-align: center;
+        font-size: 12px;
+        color: #8a95a0;
+        letter-spacing: 1px;
+      }
+
+      @media (max-width: 768px) {
+        .site-header {
+          padding: 20px;
+          flex-direction: column;
+          gap: 15px;
+        }
+        .site-header nav a {
+          margin: 0 12px;
+        }
+        .hero h1 {
+          font-size: 36px;
+        }
+        .metrics-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <a href="/" class="logo">MERIDIAN HORIZON</a>
+      <nav>
+        <a href="/">Asset Register</a>
+        <a href="/about/" class="active">About</a>
+        <a href="mailto:investors@meridianhorizon.co.ke" class="contact-btn"
+          >Investor Relations</a
+        >
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>About Us</h1>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="content-section">
+      <p>
+        At Meridian Horizon REIT, we believe in full transparency and a
+        time-tested strategy for sustainable real estate investment. Our
+        methodology, unwavering focus, and deliberate capital allocation enable
+        consistent execution of our vision for long-term value creation across
+        Kenya's most dynamic property markets.
+      </p>
+      <p>
+        Our management team's deep institutional experience places us at the
+        forefront of East Africa's real estate investment landscape, delivering
+        key and premium assets to our portfolio. Through fierce dedication to
+        our investment discipline and rigorous attention to market fundamentals,
+        we are committed to delivering superior risk-adjusted returns to our
+        unitholders.
+      </p>
+      <p>
+        The seasoned professionals at Meridian Horizon follow a proven process
+        of sourcing, underwriting, acquiring, actively managing, and
+        transparently reporting on institutional-grade real estate. Their
+        combined experience in real estate private equity, asset management, and
+        property operations ensures a resilient and growing portfolio.
+      </p>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section class="philosophy">
+      <blockquote>
+        "Our philosophy is to stay ahead of the East African market and identify
+        enduring value in institutional real estate for our network of
+        unitholders, partners, and communities."
+      </blockquote>
+    </section>
+
+    <!-- KEY METRICS -->
+    <section class="content-section wide">
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <h3>KES 45.2B</h3>
+          <p>Assets Under Management</p>
+        </div>
+        <div class="metric-box">
+          <h3>96.8%</h3>
+          <p>Portfolio Occupancy</p>
+        </div>
+        <div class="metric-box">
+          <h3>142</h3>
+          <p>Active Properties</p>
+        </div>
+        <div class="metric-box">
+          <h3>5.2%</h3>
+          <p>Dividend Yield</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTMENT STRATEGY -->
+    <section class="content-section">
+      <h2>Investment Strategy</h2>
+      <p>
+        Meridian Horizon REIT is a fully integrated, self-administered real
+        estate investment trust listed on the Nairobi Securities Exchange (NSE:
+        MHR) and regulated by the Capital Markets Authority (CMA) of Kenya.
+        Established in 2018, the Trust has grown to become one of East Africa's
+        premier institutional property investment vehicles.
+      </p>
+
+      <h3>Our Mission</h3>
+      <p>
+        To deliver sustainable, risk-adjusted returns to our unitholders through
+        strategic acquisition, active management, and value enhancement of
+        high-quality real estate assets across Kenya's most dynamic urban
+        markets. We are committed to maintaining the highest standards of
+        corporate governance, transparency, and environmental stewardship.
+      </p>
+
+      <h3>Investment Philosophy</h3>
+      <ul class="clean-list">
+        <li>
+          <strong>Quality Assets in Prime Locations:</strong> We focus
+          exclusively on Class A and Class B+ properties in
+          high-barrier-to-entry metropolitan nodes with strong demographic
+          fundamentals and limited new supply.
+        </li>
+        <li>
+          <strong>Active Value Creation:</strong> Through proactive asset
+          management, strategic capital expenditure, and tenant relationship
+          management, we consistently enhance net operating income and property
+          valuations.
+        </li>
+        <li>
+          <strong>Disciplined Capital Allocation:</strong> We maintain a
+          conservative leverage profile (target LTV ratio of 35-40%) and deploy
+          capital only when risk-adjusted returns meet our stringent hurdle
+          rates.
+        </li>
+      </ul>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="content-section">
+      <h2>Portfolio Composition</h2>
+      <p>
+        Our portfolio is strategically diversified across multiple asset classes
+        and geographic regions to mitigate concentration risk and capture growth
+        opportunities across Kenya's real estate landscape.
+      </p>
+
+      <h3>Asset Class Breakdown</h3>
+      <ul class="clean-list">
+        <li>
+          <strong>Multi-Family Residential (52%):</strong> Premium apartment
+          complexes in Nairobi's most sought-after neighbourhoods, targeting
+          middle-to-upper income professionals and expatriates.
+        </li>
+        <li>
+          <strong>Commercial Office (28%):</strong> Grade A office space in
+          prime business districts including Westlands, Upper Hill, and Central
+          Business District.
+        </li>
+        <li>
+          <strong>Retail (12%):</strong> Neighbourhood shopping centres and
+          high-street retail locations anchored by established supermarket
+          chains.
+        </li>
+        <li>
+          <strong>Industrial & Logistics (8%):</strong> Modern warehousing and
+          light industrial facilities along key transport corridors including
+          Mombasa Road and the Northern Bypass.
+        </li>
+      </ul>
+
+      <h3>Geographic Focus</h3>
+      <ul class="clean-list">
+        <li>
+          <strong>Nairobi Metropolitan (78%):</strong> Kenya's economic hub and
+          East Africa's commercial centre.
+        </li>
+        <li>
+          <strong>Mombasa (12%):</strong> Coastal region benefiting from
+          port-driven logistics demand and tourism.
+        </li>
+        <li>
+          <strong>Kisumu (6%):</strong> Lake Victoria region's growing economic
+          activity under Vision 2030.
+        </li>
+        <li>
+          <strong>Nakuru & Eldoret (4%):</strong> Agricultural hinterland
+          commercial centres experiencing urbanisation.
+        </li>
+      </ul>
+    </section>
+
+    <!-- GOVERNANCE -->
+    <section class="content-section">
+      <h2>Governance & Regulatory Compliance</h2>
+      <p>
+        Meridian Horizon REIT operates under the highest standards of corporate
+        governance and full compliance with Kenyan regulatory requirements. Our
+        governance framework is designed to protect unitholder interests, ensure
+        transparency, and maintain market confidence.
+      </p>
+
+      <ul class="clean-list">
+        <li>
+          <strong>Capital Markets Authority (CMA):</strong> Full compliance with
+          the Capital Markets (Real Estate Investment Trusts) Regulations, 2013,
+          including quarterly financial reporting, annual valuations by
+          independent valuers, and mandatory distribution of at least 80% of net
+          income as dividends.
+        </li>
+        <li>
+          <strong>Nairobi Securities Exchange (NSE):</strong> Adherence to all
+          NSE listing requirements, including continuous disclosure obligations
+          and corporate governance code compliance.
+        </li>
+        <li>
+          <strong>Tax Compliance:</strong> REIT status grants exemption from
+          corporate income tax on rental income distributed to unitholders,
+          subject to compliance with CMA regulations and Kenya Revenue Authority
+          (KRA) requirements.
+        </li>
+      </ul>
+
+      <div class="info-box">
+        <strong>For Regulators & Compliance Officers</strong>
+        All statutory filings, annual reports, independent valuations, and audit
+        reports are available in our Investor Relations portal. The Trust
+        maintains an unqualified audit opinion from PricewaterhouseCoopers Kenya
+        and conducts bi-annual independent valuations through Knight Frank Kenya
+        and HassConsult.
+      </div>
+    </section>
+
+    <!-- ESG -->
+    <section class="content-section">
+      <h2>Environmental, Social & Governance</h2>
+      <p>
+        We recognise that sustainable value creation requires balancing
+        financial performance with environmental stewardship and social
+        responsibility. Our ESG framework aligns with the Global Real Estate
+        Sustainability Benchmark (GRESB) standards and the UN Sustainable
+        Development Goals.
+      </p>
+
+      <h3>Environmental Initiatives</h3>
+      <ul class="clean-list">
+        <li>
+          <strong>Energy Efficiency:</strong> 68% of our portfolio features LED
+          lighting, solar water heating, and energy-efficient HVAC systems.
+          Targeting 100% LED conversion by 2027.
+        </li>
+        <li>
+          <strong>Water Conservation:</strong> Rainwater harvesting systems
+          installed in 45% of multi-family residential assets, reducing
+          municipal water consumption by an average of 22%.
+        </li>
+        <li>
+          <strong>Waste Management:</strong> Comprehensive recycling programmes
+          across all commercial properties, diverting 35% of waste from
+          landfill.
+        </li>
+      </ul>
+
+      <h3>Social Impact</h3>
+      <ul class="clean-list">
+        <li>
+          <strong>Affordable Housing:</strong> Committed to allocating 10% of
+          new development pipeline to affordable housing units priced below
+          market rates.
+        </li>
+        <li>
+          <strong>Community Engagement:</strong> Annual community investment
+          programme supporting education and skills development in
+          neighbourhoods surrounding our properties.
+        </li>
+        <li>
+          <strong>Tenant Wellbeing:</strong> Comprehensive tenant engagement
+          programmes achieving 94% tenant satisfaction scores.
+        </li>
+      </ul>
+    </section>
+
+    <!-- FINANCIAL PERFORMANCE -->
+    <section class="content-section">
+      <h2>Financial Performance — FY 2025</h2>
+      <p>
+        The Trust delivered strong financial performance in FY 2025,
+        demonstrating the resilience of our diversified portfolio and the
+        effectiveness of our active asset management strategy.
+      </p>
+
+      <ul class="clean-list">
+        <li><strong>Gross Revenue:</strong> KES 3.82 billion (+12.4% YoY)</li>
+        <li>
+          <strong>Net Operating Income:</strong> KES 2.94 billion (+14.1% YoY)
+        </li>
+        <li>
+          <strong>Net Asset Value (NAV):</strong> KES 45.2 billion (+8.7% YoY)
+        </li>
+        <li>
+          <strong>Dividend Per Unit:</strong> KES 1.04 per unit (5.2% yield)
+        </li>
+        <li>
+          <strong>Loan-to-Value (LTV) Ratio:</strong> 37.2% (within target range
+          of 35-40%)
+        </li>
+        <li><strong>Interest Coverage Ratio:</strong> 4.8x</li>
+      </ul>
+
+      <div class="info-box">
+        <strong>For Investors & Analysts</strong>
+        Detailed financial statements, management discussion & analysis, and
+        presentation materials are available in our Investor Relations section.
+        The Trust hosts quarterly earnings calls and maintains an active
+        investor engagement programme.
+      </div>
+    </section>
+
+    <!-- STRATEGIC OUTLOOK -->
+    <section class="content-section">
+      <h2>Strategic Outlook 2026–2028</h2>
+      <p>
+        Looking ahead, Meridian Horizon REIT is well-positioned to capitalise on
+        Kenya's continued urbanisation, demographic dividend, and infrastructure
+        development.
+      </p>
+
+      <ul class="clean-list">
+        <li>
+          <strong>Portfolio Enhancement:</strong> KES 2.8 billion allocated for
+          asset enhancement initiatives across 18 properties, targeting rental
+          growth of 8-12% post-completion.
+        </li>
+        <li>
+          <strong>Development Pipeline:</strong> Two new multi-family
+          residential projects (420 units total) in Kilimani and Ruaka, with
+          combined development cost of KES 4.5 billion and targeted completion
+          in Q4 2027.
+        </li>
+        <li>
+          <strong>Geographic Expansion:</strong> Evaluating acquisition
+          opportunities in Mombasa's Diani beach corridor and Kisumu's emerging
+          commercial district.
+        </li>
+        <li>
+          <strong>Sustainability Targets:</strong> Achieve EDGE certification
+          for 50% of portfolio by 2028 and reduce carbon intensity by 25% versus
+          2020 baseline.
+        </li>
+      </ul>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h4>Meridian Horizon REIT</h4>
+          <p>
+            Continued excellence in East African real estate investment and
+            institutional property management.
+          </p>
+          <p>
+            <a href="mailto:investors@meridianhorizon.co.ke"
+              >investors@meridianhorizon.co.ke</a
+            >
+          </p>
+          <p>
+            Delta Centre, 4th Floor<br />
+            Muthangari Drive, Lavington<br />
+            P.O. Box 12345-00100<br />
+            Nairobi, Kenya
+          </p>
+          <p><a href="tel:+254201234567">+254 20 123 4567</a></p>
+        </div>
+        <div>
+          <h4>Our Work</h4>
+          <a href="/">Active Asset Register</a>
+          <a href="/about/">Trust Overview</a>
+          <a href="mailto:investors@meridianhorizon.co.ke"
+            >Investor Relations</a
+          >
+        </div>
+        <div>
+          <div>
+            <h4>Regulatory</h4>
+            <a href="/corporate/filings/cma/">CMA Filings</a>
+            <a href="/corporate/filings/nse/">NSE Disclosures</a>
+            <a href="/corporate/reports/annual/">Annual Reports</a>
+            <a href="/corporate/valuations/">Independent Valuations</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 MERIDIAN HORIZON REIT. ALL RIGHTS RESERVED. &nbsp;|&nbsp; LISTED
+        ON THE NAIROBI SECURITIES EXCHANGE &nbsp;|&nbsp; REGULATED BY THE
+        CAPITAL MARKETS AUTHORITY
+      </div>
+    </footer>
+  </body>
+</html>
